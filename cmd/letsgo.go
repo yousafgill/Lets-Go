@@ -6,7 +6,9 @@ import (
 	"strings"
 
 	"github.com/yousafgill/letsgo/pkg/controlflow"
+	"github.com/yousafgill/letsgo/pkg/encryption"
 	"github.com/yousafgill/letsgo/pkg/function"
+	"github.com/yousafgill/letsgo/pkg/goroutine"
 	"github.com/yousafgill/letsgo/pkg/loop"
 	"github.com/yousafgill/letsgo/pkg/operator"
 	"github.com/yousafgill/letsgo/pkg/variable"
@@ -25,7 +27,9 @@ func main() {
 4: Print Control Flow
 5: Print Functions 
 6: Print Loops
-7: Exit`)
+7: Test Go Routines
+8: Test Encryption
+99: Exit`)
 
 	//2: Read user input
 	var input string
@@ -50,6 +54,10 @@ func main() {
 	case "6":
 		loop.PrintLoops()
 	case "7":
+		goroutine.TestGoRoutine()
+	case "8":
+		encryption.RunEncryption()
+	case "99":
 		return
 	default:
 		println("Invalid input")
